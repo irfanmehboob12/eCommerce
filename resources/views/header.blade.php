@@ -15,8 +15,8 @@
           <a class="nav-link" href="#">Orders</a>
           
         </li>
-        <form class="d-flex mx-3" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex mx-3" action="/search" role="search">
+        <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> 
         <li class="nav-item position-absolute top-50 end-0 translate-middle">

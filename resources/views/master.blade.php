@@ -43,11 +43,81 @@
         float:left;
         padding-left:30px;
     }
-
+     .
     .head-pos
     {
-       margin-left:30px;
-       margin-top:30px;
+        
+        margin-left: 200px;
+        margin-right: ;
+
+    }
+
+    .detail-img
+    {
+
+        height:200px;
+        margin-top:10px;
+    }
+
+    .img-desc
+    {
+        position:absolute;
+        margin-top:50px;
+        margin-left:400px;
+    }
+    .img-div
+    {
+        position:absolute;
+        margin-right:40px;
+        margin-top:50px;
+    
+    }
+
+    .btn-buy
+    {
+        background-color:DodgerBlue;
+        margin-right:20px;
+        width:250px;
+        height:50px;
+        font-size: 16px;
+        color: white;
+        border:none;
+     
+    }
+    .btn-cart
+    {
+        background-color:Orange;
+        border:none;
+        color: white;
+        width:250px;
+        height:50px;
+        font-size: 16px;
+
+    }
+
+    .price-s1
+    {
+
+        color:MediumSeaGreen;  
+    }
+
+    .search-box
+    {
+
+        width:600px;
+    }
+
+    .search-item
+    {
+        margin-top:30px;
+        margin-left:30px;
+    }
+    .search-img
+    {
+        height:100px;
+        width:200px;
+        
+        
 
 
     }
