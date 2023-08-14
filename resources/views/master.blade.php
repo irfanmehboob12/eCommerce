@@ -30,5 +30,26 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .trending-img
+    {
+        height:80px;
+        
+
+
+    }
+    .trending-item
+    {
+        margin-top:30px;
+        float:left;
+        padding-left:30px;
+    }
+
+    .head-pos
+    {
+       margin-left:30px;
+       margin-top:30px;
+
+
+    }
 </style>
 </html>

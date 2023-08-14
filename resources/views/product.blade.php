@@ -37,16 +37,16 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<h1>Trending Products</h1>
+<h2 class="head-pos">Trending Products</h2>
 <div class="carousel-inner">
     @foreach($products as $item)
-    <div class="">
-      <img class="slider-img" src="{{$item['gallary']}}" >
+    <div class="trending-item">
+      <img class="trending-img" src="{{$item['gallary']}}" >
       <div class="">
-        <h3>{{$item['name']}}</h3>
+        <h6>{{$item['name']}}</h6>
         
       </div>
      </div>
-
-
+    
+ @endforeach
 @endsection
