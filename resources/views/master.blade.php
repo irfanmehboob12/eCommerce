@@ -76,12 +76,14 @@
     .btn-buy
     {
         background-color:DodgerBlue;
-        margin-right:20px;
+        left:280px;
         width:250px;
         height:50px;
         font-size: 16px;
         color: white;
         border:none;
+        position:absolute;
+        display: inline-block;
      
     }
     .btn-cart
@@ -92,6 +94,8 @@
         width:250px;
         height:50px;
         font-size: 16px;
+        display: inline-block;
+        position:absolute;
 
     }
 
@@ -117,9 +121,21 @@
         height:100px;
         width:200px;
         
-        
+     }
+
+     .cart-list-divider
+     {
+
+       border-bottom: 1px solid #ccc;
+
+     }
+      .s2-text
+      {
+        position:relative;
+        margin-top:20px;
 
 
-    }
+      }
+
 </style>
 </html>

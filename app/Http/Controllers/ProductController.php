@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Cart;
+use Illuminate\support\Facades\DB;
+use Session;
 
 class ProductController extends Controller
 {
@@ -25,5 +28,41 @@ class ProductController extends Controller
        $data=Product::where('name','like','%'.$req->input('query').'%')->get();
        return view('search',['products'=>$data]);
     }
-    
+
+    function addToCart(Request $req)
+    {
+        if($req->session()->has('user'))
+        {
+            $cart=new Cart();
+            $cart->user_id=$req->session()->get('user')['id'];
+            $cart->product_id=$req->product_id;
+            $cart->save();
+            return redirect("/");
+        }
+        else {
+            return redirect("/login");
+        }
+
+
+    }
+
+
+    public static function cartItem() {
+        $user_id=Session::get('user')['id'];
+        $count=Cart::where('user_id',$user_id)->count();
+        return $count;
+
+    }
+
+    public function cartList()
+    {
+       $userid=Session::get('user')['id'];
+       $data=DB::table('cart')
+       ->join('products','cart.product_id','products.id')
+       ->select('products.*')
+       ->where('cart.user_id',$userid)
+       ->get();
+       return view('cartlist',['products'=>$data]);
+     
+    }
 }
