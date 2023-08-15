@@ -31,7 +31,7 @@ if(Session::has('user'))
 </div>
 </div>
 <div class="col-sm-3">
-<button class="btn btn-warning">Remove from Cart</button>
+<a href="/removecart/{{$item->cart_id}}" class="btn btn-warning">Remove from Cart</a>
 </div>
 </div>
   @endforeach  
