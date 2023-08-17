@@ -1,6 +1,18 @@
 @extends('master')
 @section('content')
+<?php
+$count=$products->count();
 
+?>
+@if($count==0)
+
+<div style="margin-top:140px;margin-left:550px;" class="container">
+
+<img style=";height:300px" src="https://cdn.dribbble.com/userupload/2905383/file/original-4ea237e94e803ddd575a66eb32198899.png?compress=1&resize=400x300&vertical=center"/>
+
+
+</div>
+@else
 
 <h2 style="margin-top:30px;margin-left:30px;">Result for  Products</h2>
 <div class="carousel-inner">
@@ -15,8 +27,10 @@
       </a>
      </div>
 
-    
- @endforeach
+@endforeach
+@endif
+
+
 
 
 @endsection

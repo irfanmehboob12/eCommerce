@@ -136,6 +136,26 @@
 
 
       }
+      .sm
+      {
+        position:relative;
+        margin-top:20px;
+        margin-left:20px;
+
+
+      }
+
+      .style-label
+      {
+        font-weight:bold;
+
+      }
+      .warn-s1
+      {
+        visibility: hidden;
+        color: red;
+
+      }
 
 </style>
 </html>

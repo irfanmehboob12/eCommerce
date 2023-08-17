@@ -9,15 +9,15 @@
  <a href="/" >Go Back</a>
  <br><br>
  <h4>Name : {{$product['name']}}</h4>
- <h5 class="price-s1">Price : {{$product['price']}}</h5>
+ <h5 class="price-s1">Price : Rs. {{$product['price']}}/-</h5>
  <h6>Catagory : {{$product['catagory']}}</h6>
  <h6>Description : {{$product['description']}}</h6>
  <br><br>
- <button class="btn-buy d-inline-block">Buy Now</button>
+ <button class="btn-buy">Buy Now</button>
  <form action="/add_to_cart" method="POST">
  <input type="hidden" name="product_id" value="{{$product['id']}}">
  @csrf
-  <button class="btn-cart d-inline-block">Add to Cart</button>
+  <button class="btn-cart">Add to Cart</button>
 </form>
  <br><br>
 

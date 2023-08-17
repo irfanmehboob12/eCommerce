@@ -1,11 +1,15 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Session;
 
 class ProductController extends Controller
@@ -26,6 +30,8 @@ class ProductController extends Controller
     function search(Request $req)
     {
        $data=Product::where('name','like','%'.$req->input('query').'%')->get();
+       
+       
        return view('search',['products'=>$data]);
     }
 
@@ -56,13 +62,37 @@ class ProductController extends Controller
 
     public function cartList()
     {
-       $userid=Session::get('user')['id'];
-       $data=DB::table('cart')
+       
+       
+    
+       if(Session::has('user'))
+       {
+        $userid=Session::get('user')['id'];
+        $data=DB::table('cart')->where('cart.user_id',$userid)->get();
+        //return $data;
+        
+        if($data->isEmpty())
+        {
+            return redirect("/notfound");
+        }
+        else
+        {
+        $userid=Session::get('user')['id'];
+         $data=DB::table('cart')
        ->join('products','cart.product_id','products.id')
        ->select('products.*','cart.id as cart_id')
        ->where('cart.user_id',$userid)
        ->get();
        return view('cartlist',['products'=>$data]);
+        
+        }
+       }
+       else
+       {
+        echo "<script>";
+        echo "window.open('http://localhost:8000/login')";
+        echo "</script>";
+       }
      
     }
 
@@ -72,4 +102,142 @@ class ProductController extends Controller
         return redirect('/cartlist');
        
     }
+
+    public function orderNow()
+    {
+       $userid=Session::get('user')['id'];
+       $total= DB::table('cart')
+       ->join('products','cart.product_id','products.id')
+       ->where('cart.user_id',$userid)
+       ->sum('products.price');
+       return view('ordernow',['total'=>$total]);
+     
+    }
+
+    public function orderPlace(Request $req)
+    {
+        if($req->address==""  || $req->payment=="")
+        {
+            echo "<script>";
+            echo "alert('Note : Some fields are empty. All fields must be filled.');";
+            echo "window.open('http://localhost:8000/ordernow')";
+            echo "</script>";
+
+        }
+        else
+        {
+
+
+
+        $userid=Session::get('user')['id'];
+        $allCart= Cart::where('user_id',$userid)->get();
+        foreach($allCart as $cart)
+        {
+
+              $order=new Order();
+              $order->product_id=$cart['product_id'];
+              $order->user_id=$cart['user_id'];
+              $order->address=$req->address;
+              $order->status="Pending";
+              $order->payment_method=$req->payment;
+              $order->payment_status="Pending";
+              $order->save();
+              
+              
+        }
+           Cart::where('user_id',$userid)->delete();
+           return redirect("/");
+    }
+    }
+
+      public function myOrder()
+      {
+        
+       if(Session::has('user'))
+       {
+        $userid=Session::get('user')['id'];
+        $data=DB::table('orders')
+        ->join('products','orders.product_id','products.id')
+        ->where('orders.user_id',$userid)
+        ->get();
+        return view('myorder',['orders'=>$data]);
+       }
+       else
+       {
+        echo "<script>";
+        echo "window.open('http://localhost:8000/login')";
+        echo "</script>";
+       }
+
+   
+      }
+
+      public function signup(request $req)
+    {
+        if($req->name==""  || $req->email==""  || $req->password==""  || $req->cpassword=="")
+        {
+            echo "<script>";
+            echo "alert('Note : Some fields are empty. All fields must be filled.');";
+            echo "window.open('http://localhost:8000/signup')";
+            echo "</script>";
+
+        }
+        else
+        {
+
+
+
+       if($req->password == $req->cpassword)
+       {
+          $users=User::all();
+          foreach($users as $user)
+          {
+            $flag=true;
+           if($req->email == $user->email)
+           {
+              $flag=false;
+             
+              break;
+             
+            }
+           }
+            
+          
+
+          if($flag)
+         {
+         
+        $user=new User();
+        $user->name=$req->name;
+        $user->email=$req->email;
+        $user->password=Hash::make($req->password);
+        $user->save();
+          return redirect("/login");
+         }
+       
+       else
+       {
+        echo "<script>";
+        echo "alert('Note : Email address already exists.');";
+        echo "window.open('http://localhost:8000/signup')";
+        echo "</script>";
+        
+          //return redirect('/signup');
+          
+        
+       }
+    }
+    else 
+    {
+
+        echo "<script>";
+        echo "alert('Note : Password not matched.');";
+        echo "window.open('http://localhost:8000/signup')";
+        echo "</script>";
+      //return redirect('/signup');
+    }
+
+} 
+    }
+
 }

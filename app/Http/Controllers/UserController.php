@@ -11,10 +11,24 @@ class UserController extends Controller
 
     function index(Request $req)
     {
+
+      if( $req->email==""  || $req->password=="")
+      {
+          echo "<script>";
+          echo "alert('Note : Username and Password fields must be filled.');";
+          echo "window.open('http://localhost:8000/login')";
+          echo "</script>";
+
+      }
+      else
+      {
        $user= User::where(['email'=>$req->email])->first();
        if(!$user || !Hash::check($req->password,$user->password))
        {
-         return "Username or Password not matched";
+        echo "<script>";
+        echo "alert('Note : Username or Password not matched.');";
+        echo "window.open('http://localhost:8000/login')";
+        echo "</script>";
 
        }
        else{
@@ -23,7 +37,7 @@ class UserController extends Controller
        return redirect('/');
        }
     }
-
+  }
     
 
 

@@ -23,6 +23,8 @@ Route::get('/logout', function () {
 
 
 Route::view('login','login');
+Route::view('notfound','nopage');
+Route::view('signup','signup');
 Route::post("/login",[UserController::class,'index']);
 Route::get("/",[ProductController::class,'show']);
 Route::get("/detail/{id}",[ProductController::class,'detail']);
@@ -30,3 +32,7 @@ Route::get("/search",[ProductController::class,'search']);
 Route::post("/add_to_cart",[ProductController::class,'addToCart']);
 Route::get("/cartlist",[ProductController::class,'cartList']);
 Route::get("/removecart/{id}",[ProductController::class,'removeCart']);
+Route::get("/ordernow",[ProductController::class,'orderNow']);
+Route::post("/orderplace",[ProductController::class,'orderPlace']);
+Route::get("/myorder",[ProductController::class,'myOrder']);
+Route::post("/signup",[ProductController::class,'signup']);

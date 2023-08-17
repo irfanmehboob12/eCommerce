@@ -21,18 +21,21 @@ if(Session::has('user'))
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Orders</a>
+          <a class="nav-link" href="/myorder">Orders</a>
           
         </li>
         <form class="d-flex mx-3" action="/search" role="search">
         <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> 
+      <img  style="position:absolute;top:15px;right:330px;height:25px; " src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png">
+        
         <li class="nav-item position-absolute top-50  translate-middle" style="right:180px;">
+       
         <a class="nav-link active" aria-current="page" href="/cartlist">Cart Item ({{$total}})<a>
         </li>
         @if(Session()->has('user'))
-        <li class="nav-item dropdown position-relative"  style="margin-left:130px;margin-top:5px;">
+        <li class="nav-item dropdown position-relative"  style="margin-left:300px;margin-top:5px;">
           <a class="nav-link dropdown-toggle" style="font-size:14px;color:green;" href="#" role="button" data-bs-toggle="dropdown" >
             {{Session::get('user')['name']}}
           </a>
@@ -44,6 +47,9 @@ if(Session::has('user'))
         @else
         <li class="nav-item dropdown position-absolute top-50 translate-middle" style="right:0px">
         <a   class="nav-link dropdown-item" href="/login">Login</a>
+        </li>
+        <li class="nav-item dropdown position-absolute top-50 translate-middle" style="right:50px">
+        <a   class="nav-link dropdown-item" href="/signup">SIGNUP</a>
         </li>
         @endif
 
