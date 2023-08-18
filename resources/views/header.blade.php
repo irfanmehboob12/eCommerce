@@ -35,7 +35,7 @@ if(Session::has('user'))
         <a class="nav-link active" aria-current="page" href="/cartlist">Cart Item ({{$total}})<a>
         </li>
         @if(Session()->has('user'))
-        <li class="nav-item dropdown position-relative"  style="margin-left:300px;margin-top:5px;">
+        <li class="nav-item dropdown position-relative"  style="margin-left:280px;margin-top:5px;">
           <a class="nav-link dropdown-toggle" style="font-size:14px;color:green;" href="#" role="button" data-bs-toggle="dropdown" >
             {{Session::get('user')['name']}}
           </a>

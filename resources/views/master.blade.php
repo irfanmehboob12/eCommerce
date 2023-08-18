@@ -41,7 +41,7 @@
     {
         margin-top:30px;
         float:left;
-        padding-left:30px;
+        padding-left:40px;
     }
      .
     .head-pos
@@ -159,3 +159,5 @@
 
 </style>
 </html>
+
+@include('footer')

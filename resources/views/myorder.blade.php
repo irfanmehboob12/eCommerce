@@ -20,7 +20,7 @@ if(Session::has('user'))
 <div class="custom-product">
 <div class="col-sm-10">
 <div class="trending-wrapper">
-<h5 class="" style="margin-left:50px;margin-top:50px;"> Order Items ({{$count}}) </h5><br>
+<h5 class="" style="position:absolute;margin-left:50px;top:80px;"> Order Items ({{$count}}) </h5><br>
 @if($count==0)
 <div style="margin-top:110px;margin-left:550px;" class="container">
 
@@ -35,7 +35,7 @@ if(Session::has('user'))
 
 <div class="">
   @foreach($orders as $item)
- <div class="row search-item +">
+ <div  style="margin-top:40px;padding:30px;height:230px;width:850px;background-color:#ededed;" class="row search-item +">
  <div class="col-sm-3">
 <a href="detail/{{$item->id}}">
     <img class="trending-img" src="{{$item->gallary}}">

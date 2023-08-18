@@ -39,7 +39,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<h2 class="head-pos">Trending Products</h2>
+<h3 style="margin-left:30px;" class="head-pos">Trending Products</h3>
 <div class="carousel-inner">
     @foreach($products as $item)
     <div class="trending-item">

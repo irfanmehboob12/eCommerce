@@ -24,6 +24,7 @@ Route::get('/logout', function () {
 
 Route::view('login','login');
 Route::view('notfound','nopage');
+Route::view('order_confirmation','ordersubmitted');
 Route::view('signup','signup');
 Route::post("/login",[UserController::class,'index']);
 Route::get("/",[ProductController::class,'show']);
@@ -36,3 +37,4 @@ Route::get("/ordernow",[ProductController::class,'orderNow']);
 Route::post("/orderplace",[ProductController::class,'orderPlace']);
 Route::get("/myorder",[ProductController::class,'myOrder']);
 Route::post("/signup",[ProductController::class,'signup']);
+Route::post("/buy_product",[ProductController::class,'buyProduct']);

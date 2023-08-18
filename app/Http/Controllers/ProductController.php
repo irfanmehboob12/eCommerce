@@ -146,7 +146,7 @@ class ProductController extends Controller
               
         }
            Cart::where('user_id',$userid)->delete();
-           return redirect("/");
+           return redirect("/order_confirmation");
     }
     }
 
@@ -239,5 +239,32 @@ class ProductController extends Controller
 
 } 
     }
+
+
+   public  function buyProduct(Request $req)
+   {
+    if($req->session()->has('user'))
+    {
+
+            $cart=new Cart();
+            $cart->user_id=$req->session()->get('user')['id'];
+            $cart->product_id=$req->product_id;
+            $cart->save();
+
+        $data=DB::table('products')->where('Products.id',$req->product_id)
+        ->select('products.price')
+        ->sum('products.price');
+          
+       return view('ordernow',['total'=>$data]);
+      
+     
+    }
+    else
+    {
+
+        return redirect("/login");
+    }
+
+   }
 
 }
