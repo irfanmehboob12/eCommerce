@@ -26,6 +26,7 @@ Route::view('login','login');
 Route::view('notfound','nopage');
 Route::view('order_confirmation','ordersubmitted');
 Route::view('signup','signup');
+Route::view('sidemenu','sidemenu');
 Route::post("/login",[UserController::class,'index']);
 Route::get("/",[ProductController::class,'show']);
 Route::get("/detail/{id}",[ProductController::class,'detail']);
