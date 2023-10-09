@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('catagory');
             $table->string('gallary');
             $table->string('description');
+            $table->string('rating');
+            $table->string('deliveryDate');
+            $table->string('deliveryAddress');
+            $table->string('productTag');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_products');
+        Schema::dropIfExists('products');
     }
 };

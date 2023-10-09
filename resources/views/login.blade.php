@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
-<p   style="position:absolute;font:12px italic;margin-top:150px; margin-left:620px;"> Login to<p>
-<p   style="color:blue;position:absolute;font:30px italic bold ;margin-top:120px; margin-left:670px;"> ShopOnline.com<p>
+<p   style="position:absolute;font:12px italic;margin-top:110px; margin-left:620px;"> Login to<p>
+<p   style="color:blue;position:absolute;font:30px italic bold ;margin-top:80px; margin-left:670px;"> ShopOnline.com<p>
 <div class="container custom-login" >
 <div class="row">
 <div class="col-sm-3 position-absolute top-50 start-50 translate-middle">

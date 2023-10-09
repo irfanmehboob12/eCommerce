@@ -20,13 +20,14 @@ Route::get('/logout', function () {
     Session::forget('user');
     return redirect('login');
 });
-
-
+Route::view('check','check');
+Route::view('slider','slider');
 Route::view('login','login');
 Route::view('notfound','nopage');
 Route::view('order_confirmation','ordersubmitted');
 Route::view('signup','signup');
 Route::view('sidemenu','sidemenu');
+Route::get("/detail",[ProductController::class,'show1']);
 Route::post("/login",[UserController::class,'index']);
 Route::get("/",[ProductController::class,'show']);
 Route::get("/detail/{id}",[ProductController::class,'detail']);

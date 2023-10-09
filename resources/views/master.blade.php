@@ -30,17 +30,18 @@ body {
   left: 0;
   background-color: white;
   overflow-x: hidden;
-  transition: 0.5s;
+  overflow-y: scroll;
+  transition: 0.4s;
   padding-top: 60px;
 }
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 15px;
+  color:  #404040;
   display: block;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 
@@ -48,28 +49,42 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: #404040;
   display: block;
   border: none;
-  background: none;
+  background: white;
   width: 100%;
   text-align: left;
   cursor: pointer;
   outline: none;
 }
 
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
+.sidenav a:hover {
+ background-color: #E6E6FA;
 }
 
+ .g1:hover {
+ background-color: black;
+ 
+}
+
+.sidenav .g1:hover {
+ background-color: black;
+ 
+}
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 0;
   font-size: 36px;
   margin-left: 50px;
+  }
+.img1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
 }
-
 #main {
   transition: margin-left .5s;
   padding: 16px;
@@ -85,12 +100,50 @@ body {
 .fa-caret-down {
   float: right;
   padding-right: 8px;
+  color:#404040;
+
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.m7
+  {
+
+    width:27px;
+    height:27px;
+    
+  }
+.m7:hover
+{
+  filter: brightness(120%);
+
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.dark-mode 
+{
+  background-color: black;
+  color: white;
+}
+
     .custom-login
     {
        height:100px;
@@ -103,9 +156,10 @@ body {
         height:400px;
         
         display: block;
-        margin-left: auto;
+        margin#E6E6FA-left: auto;
         margin-right: auto;
     }
+
     .trending-img
     {
         height:80px;
@@ -233,6 +287,52 @@ body {
 
       }
 
+
+      #grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(blue, yellow);
+}
+
+.five-pointed-star {
+ --star-color:orange;
+ margin:1em auto;
+ font-size:10em;
+ position: relative;
+ display: block;
+ width: 45px;
+ height: 45px;
+ border-right: 1em solid transparent;
+ border-bottom: 0.7em solid var(--star-color);
+ border-left: 1em solid transparent;
+ transform: rotate(35deg);
+}
+.five-pointed-star:before {
+ border-bottom: 0.8em solid var(--star-color);
+ border-left: 0.3em solid transparent;
+ border-right: 0.3em solid transparent;
+ position: absolute;
+ height: 45px;
+ width: 45px;
+ top: -0.45em;
+ left: -0.65em;
+ display: block;
+ content:"";
+ transform: rotate(-35deg);
+}
+.five-pointed-star:after {
+ position: absolute;
+ display: block;
+ top: 0.03em;
+ left: -1.05em;
+ width: 45px;
+ height: 45px;
+ border-right: 1em solid transparent;
+ border-bottom: 0.7em solid var(--star-color);
+ border-left: 1em solid transparent;
+ transform: rotate(-70deg);
+ content:"";
+}
 
       /* Dropdown Button */
 .dropbtn {

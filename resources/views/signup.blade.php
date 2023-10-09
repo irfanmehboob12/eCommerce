@@ -3,8 +3,8 @@
 
 
 <br>
-<p   style="position:absolute;font:13px italic;margin-top:35px; margin-left:610px;"> Signup to<p>
-<p   style="color:blue;position:absolute;font:30px italic bold ;margin-top:5px; margin-left:670px;"> ShopOnline.com<p>
+<p   style="position:absolute;font:13px italic;margin-top:5px; margin-left:610px;"> Signup to<p>
+<p   style="color:blue;position:absolute;font:30px italic bold ;margin-top:-25px; margin-left:670px;"> ShopOnline.com<p>
 
 
 <div class="col-sm-3 position-absolute top-50 start-50 translate-middle">
