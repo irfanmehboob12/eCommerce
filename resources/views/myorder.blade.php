@@ -32,7 +32,7 @@ if(Session::has('user'))
 
 @endif
 
-<img src="images/beauty1.jpg" >
+
 
 <div class="">
   @foreach($orders as $item)

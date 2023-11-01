@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-comm Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
      
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
 </head>
 <body style="background-color:#f0f0f0">
     {{View::make('header')}}
@@ -17,6 +19,12 @@
 </body>
 
 <style>
+
+
+
+
+
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -294,6 +302,119 @@ body {
   background-image: linear-gradient(blue, yellow);
 }
 
+
+
+.s5:hover {
+  border: 1px solid red;
+  
+
+}
+.dropbtn1 {
+  
+  position:relative;
+  
+  cursor: pointer;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  
+}
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content1 a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
+
+
+
+
+
+
+.demo15{
+
+  display:none;
+}
+.detail-more1
+{
+   text-decoration:none;
+   cursor:pointer;
+   color:#4682B4;
+  
+}
+
+.triangle-up {
+	width: 50px;
+	height: 50px;
+  margin-left:-70px;
+  position:absolute;
+  margin-top:-50px;
+  display:none;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 20px solid yellow;
+}
+
+.detail-more1:hover
+{
+   color:red;
+  
+
+
+}
+
+.detail-more
+{
+   text-decoration:none;
+   cursor:pointer;
+   color:#4682B4;
+  
+}
+.detail-more:hover
+{
+   color:red;
+   text-decoration:underline;
+
+
+}
+
+.list1
+{
+  width:77px;
+  height:35px;
+  padding-left:15px;
+  padding-top:5px;
+  margin-left:-32px;
+  margin-top:2px;
+  border-style:none;
+  background-color:white;
+
+}
+.list1:hover
+{
+  
+  
+  background-color:#e0e0e0;
+
+}
 .five-pointed-star {
  --star-color:orange;
  margin:1em auto;

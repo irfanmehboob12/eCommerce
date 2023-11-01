@@ -27,9 +27,29 @@ class ProductController extends Controller
 
     function detail($id)
     {
-
-        $data= Product::find($id);
-        return view('detail',['product'=>$data]);
+       //$data= DB::table('products')
+       //->join('mobiles','products.id','=','mobiles.id')
+       //->where('products.id','=',$id)
+      // ->get();
+      $data = DB::table('products')
+      ->leftJoin('features', 'products.id', '=', 'features.product_id')
+      ->leftJoin('styles', 'products.id', '=', 'styles.product_id')
+      ->leftJoin('colors', 'products.id', '=', 'colors.product_id')
+      ->leftJoin('sizes', 'products.id', '=', 'sizes.product_id')
+      ->leftJoin('featuredetails', 'products.id', '=', 'featuredetails.product_id')
+      ->leftJoin('colorimages', 'products.id', '=', 'colorimages.product_id')
+      ->leftJoin('images', 'products.id', '=', 'images.product_id')
+      
+      ->where('products.id', '=', $id)
+      ->select('products.*','features.*','styles.*','sizes.*','colors.*','featuredetails.*','colorimages.*','images.*')
+      ->first();
+        
+        //$data= Product::find($id)->productData;
+        //$data= DB::table('products')->find($id);
+        //return $data;
+        $result= (array)$data;
+    
+        return view('detail',['product'=>$result]);
     }
 
     function search(Request $req)

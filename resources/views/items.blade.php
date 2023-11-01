@@ -76,8 +76,7 @@ $items = array("a"=>1, "b"=>2, "c"=>3,"d"=>4, "e"=>5, "f"=>6,"g"=>7, "h"=>8, "i"
   <div  class="card-body" style="width:295px;height:410px;">
   <p style="margin-bottom:5px;color:#de931e;text-decoration: none;font-size:21px;" >{{$item['name']}}</p>
     
-    <p style="margin-bottom:5px;color:#36454F;text-decoration: none;font-size:21px;" >{{$item['description']}}</p>
-    
+   
     @if($item['rating']=='4.1' || $item['rating']=='4.2' || $item['rating']=='4.3' || $item['rating']=='4.4' || $item['rating']=='4.5' || $item['rating']=='4.6' || $item['rating']=='4.7' || $item['rating']=='4.8' || $item['rating']=='4.9')
 <p style="position:absolute;">{{$item['rating']}}</p>
 <img src="images/star5.png"  style="margin-left:30px;width:18px;height:18px;">
